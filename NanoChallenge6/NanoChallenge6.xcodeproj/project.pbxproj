@@ -17,6 +17,8 @@
 		B65ADFA326D01D01002CE42D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65ADFA226D01D01002CE42D /* ContentView.swift */; };
 		B65ADFA526D01D0D002CE42D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65ADFA426D01D0D002CE42D /* Assets.xcassets */; };
 		B65ADFA826D01D0D002CE42D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B65ADFA726D01D0D002CE42D /* Preview Assets.xcassets */; };
+		B6E79A0626D41645004BB248 /* NewYork.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6E79A0526D41645004BB248 /* NewYork.ttf */; };
+		B6E79A0726D41645004BB248 /* NewYork.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B6E79A0526D41645004BB248 /* NewYork.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,7 @@
 		B65ADFA426D01D0D002CE42D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B65ADFA726D01D0D002CE42D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B65ADFA926D01D0D002CE42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B6E79A0526D41645004BB248 /* NewYork.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NewYork.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		B65ADF9426D01D01002CE42D = {
 			isa = PBXGroup;
 			children = (
+				B6E79A0526D41645004BB248 /* NewYork.ttf */,
 				B65ADF9F26D01D01002CE42D /* NanoChallenge6 */,
 				5A3CB88626D028D7007E560A /* NanoChallenge6Clip */,
 				B65ADF9E26D01D01002CE42D /* Products */,
@@ -216,6 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E79A0726D41645004BB248 /* NewYork.ttf in Resources */,
 				5A3CB88F26D028D7007E560A /* Preview Assets.xcassets in Resources */,
 				5A3CB88C26D028D7007E560A /* Assets.xcassets in Resources */,
 			);
@@ -225,6 +230,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6E79A0626D41645004BB248 /* NewYork.ttf in Resources */,
 				B65ADFA826D01D0D002CE42D /* Preview Assets.xcassets in Resources */,
 				B65ADFA526D01D0D002CE42D /* Assets.xcassets in Resources */,
 			);
