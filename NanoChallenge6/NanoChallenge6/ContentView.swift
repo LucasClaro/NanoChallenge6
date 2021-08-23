@@ -10,6 +10,16 @@ import SwiftUI
 struct ContentView: View {
     
     @State var guia : GuiaAberta = .Home
+    @State var mostrandoItem : Bool = false
+    @State var produtoSelecionado : String? = nil
+    @State var searchText : String = ""
+    @State private var isEditing = false
+    
+    let produtos = ["ProdutoA","ProdutoB","ProdutoComNomeGradePraTestar","ProdutoD","ProdutoE","ProdutoF","ProdutoG", "ProdutoH"]
+    let columns = [
+        GridItem(.flexible(minimum: 40), spacing: 0),
+        GridItem(.flexible(minimum: 40))
+    ]
     
     var body: some View {
         TabView (selection: $guia){
@@ -21,74 +31,106 @@ struct ContentView: View {
     }
     
     func Home() -> some View {
-        ScrollView {
-            VStack {
-                //Barra de Pesquisa
-                ScrollView(.horizontal) {
-                    HStack {
-                        Text("Categoria A")
-                        Text("Categoria B")
-                        Text("Categoria C")
-                        Text("Categoria D")
-                        Text("Categoria E")
+        
+        VStack {
+            
+            SearchBar()
+                
+                VStack {
+                    //Barra de Pesquisa
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack {
+                            Text("Categoria A")
+                            Text("Categoria B")
+                            Text("Categoria C")
+                            Text("Categoria D")
+                            Text("Categoria E")
+                        }
                     }
-                }
-                ScrollView(.horizontal) {
-                    HStack {
-                        Rectangle()
-                            .fill(Color.red)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.red)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.red)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.red)
-                            .frame(width: 150, height: 300)
+                        .padding()
+                    
+                    ScrollView(.vertical) {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach (produtos, id: \.self) { produto in
+                                                    
+                                if searchText == "" || produto.contains(searchText) {
+                                    ZStack {
+                                        Image("Teste2")
+                                            .resizable()
+                                            .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 266, idealHeight: 266, maxHeight: 266, alignment: .center)
+                                        VStack {
+                                            Image("Teste").resizable()
+                                                .frame(minWidth: 150, idealWidth: 150, maxWidth: 150, minHeight: 150, idealHeight: 150, maxHeight: 150, alignment: .center)
+                                            Text(produto)
+                                                .multilineTextAlignment(.center)
+                                                .frame(width: 150, alignment: .center)
+                                        }
+                                    }
+                                        .onTapGesture {
+                                            mostrandoItem.toggle()
+                                            produtoSelecionado = produto
+                                        }
+                                        .sheet(isPresented: $mostrandoItem) {
+                                            ItemAberto(aberto: $mostrandoItem, itemAberto: $produtoSelecionado)
+                                        }
+                                }
+                            
+                            }
+                        }
                     }
-                }
-                ScrollView(.horizontal) {
-                    HStack {
-                        Rectangle()
-                            .fill(Color.green)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.green)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.green)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.green)
-                            .frame(width: 150, height: 300)
-                    }
-                }
-                ScrollView(.horizontal) {
-                    HStack {
-                        Rectangle()
-                            .fill(Color.yellow)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.yellow)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.yellow)
-                            .frame(width: 150, height: 300)
-                        Rectangle()
-                            .fill(Color.yellow)
-                            .frame(width: 150, height: 300)
-                    }
-                }
-            }
-        }
+                }//VStack
+        }//VStack
+
     }
     
     func Guia2() -> some View {
         Rectangle()
             .fill(Color.blue)
             .frame(width: 150, height: 300)
+    }
+    
+    func SearchBar() -> some View {
+        HStack {
+         
+            TextField("Search ...", text: $searchText)
+                .padding(7)
+                .padding(.horizontal, 25)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal, 10)
+                .onTapGesture {
+                    self.isEditing = true
+                }
+ 
+            if isEditing {
+                Button(action: {
+                    self.isEditing = false
+                    self.searchText = ""
+ 
+                }) {
+                    Text("Cancel")
+                }
+                .padding(.trailing, 10)
+                .transition(.move(edge: .trailing))
+                .animation(.default)
+            }
+        }
+    }
+}
+
+struct ItemAberto: View {
+    
+    @Binding var aberto : Bool
+    @Binding var itemAberto : String?
+    
+    var body: some View {
+        Button(itemAberto ?? "Produto") {
+                    aberto = false
+                    itemAberto = nil
+                }
+                .font(.title)
+                .padding()
+                .background(Color.black)
     }
 }
 
