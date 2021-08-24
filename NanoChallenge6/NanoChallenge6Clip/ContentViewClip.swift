@@ -16,13 +16,29 @@ struct ContentViewClip: View {
     @State var searchText : String = ""
     
     var body: some View {
-        VStack {
-            Text(title)
-                .font(.title)
-                .fontWeight(.black)
+        ZStack {
+            Image("Fundo1")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Image("Logo")
+                    .resizable()
+                    .frame(width: 102, height: 80)
+                    .padding(.top, 35)
+                    .padding(.bottom, -25)
                 
-            ItensList(searchText: $searchText, selectedCategory: $category)
-                .onContinueUserActivity(NSUserActivityTypeBrowsingWeb, perform: respondToInvocation)
+                Text(title)
+                    .font(.custom("NewYork-Black", size: 28))
+                    .padding([.top], 30)
+                    .padding(.bottom, -5)
+                    .foregroundColor(.black)
+                    
+                ItensList(searchText: $searchText, selectedCategory: $category)
+                    .onContinueUserActivity(NSUserActivityTypeBrowsingWeb, perform: respondToInvocation)
+                
+            }
         }
     }
     
