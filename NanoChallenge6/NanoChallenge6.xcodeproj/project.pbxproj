@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A37F21026D5772200BC8236 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A37F20F26D5772200BC8236 /* WidgetKit.framework */; };
+		5A37F21226D5772200BC8236 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A37F21126D5772200BC8236 /* SwiftUI.framework */; };
+		5A37F21526D5772200BC8236 /* NanoChallenge6Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A37F21426D5772200BC8236 /* NanoChallenge6Widget.swift */; };
+		5A37F21826D5772400BC8236 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A37F21726D5772400BC8236 /* Assets.xcassets */; };
+		5A37F21A26D5772400BC8236 /* NanoChallenge6Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5A37F21626D5772200BC8236 /* NanoChallenge6Widget.intentdefinition */; };
+		5A37F21B26D5772400BC8236 /* NanoChallenge6Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 5A37F21626D5772200BC8236 /* NanoChallenge6Widget.intentdefinition */; };
+		5A37F21E26D5772400BC8236 /* NanoChallenge6WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5A37F20D26D5772200BC8236 /* NanoChallenge6WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5A3CB88826D028D7007E560A /* NanoChallenge6ClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB88726D028D7007E560A /* NanoChallenge6ClipApp.swift */; };
 		5A3CB88A26D028D7007E560A /* ContentViewClip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3CB88926D028D7007E560A /* ContentViewClip.swift */; };
 		5A3CB88C26D028D7007E560A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3CB88B26D028D7007E560A /* Assets.xcassets */; };
@@ -22,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5A37F21C26D5772400BC8236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B65ADF9526D01D01002CE42D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A37F20C26D5772200BC8236;
+			remoteInfo = NanoChallenge6WidgetExtension;
+		};
 		5A3CB89226D028D7007E560A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B65ADF9526D01D01002CE42D /* Project object */;
@@ -32,6 +46,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5A37F21F26D5772400BC8236 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5A37F21E26D5772400BC8236 /* NanoChallenge6WidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3CB89826D028D7007E560A /* Embed App Clips */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +71,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5A37F20D26D5772200BC8236 /* NanoChallenge6WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NanoChallenge6WidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A37F20F26D5772200BC8236 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		5A37F21126D5772200BC8236 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		5A37F21426D5772200BC8236 /* NanoChallenge6Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge6Widget.swift; sourceTree = "<group>"; };
+		5A37F21626D5772200BC8236 /* NanoChallenge6Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = NanoChallenge6Widget.intentdefinition; sourceTree = "<group>"; };
+		5A37F21726D5772400BC8236 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A37F21926D5772400BC8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A3CB88526D028D7007E560A /* NanoChallenge6Clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NanoChallenge6Clip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3CB88726D028D7007E560A /* NanoChallenge6ClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NanoChallenge6ClipApp.swift; sourceTree = "<group>"; };
 		5A3CB88926D028D7007E560A /* ContentViewClip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewClip.swift; sourceTree = "<group>"; };
@@ -63,6 +95,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A37F20A26D5772200BC8236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A37F21226D5772200BC8236 /* SwiftUI.framework in Frameworks */,
+				5A37F21026D5772200BC8236 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3CB88226D028D7007E560A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -80,6 +121,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A37F20E26D5772200BC8236 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A37F20F26D5772200BC8236 /* WidgetKit.framework */,
+				5A37F21126D5772200BC8236 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A37F21326D5772200BC8236 /* NanoChallenge6Widget */ = {
+			isa = PBXGroup;
+			children = (
+				5A37F21426D5772200BC8236 /* NanoChallenge6Widget.swift */,
+				5A37F21626D5772200BC8236 /* NanoChallenge6Widget.intentdefinition */,
+				5A37F21726D5772400BC8236 /* Assets.xcassets */,
+				5A37F21926D5772400BC8236 /* Info.plist */,
+			);
+			path = NanoChallenge6Widget;
+			sourceTree = "<group>";
+		};
 		5A3CB88626D028D7007E560A /* NanoChallenge6Clip */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +168,8 @@
 				B6E79A0526D41645004BB248 /* NewYork.ttf */,
 				B65ADF9F26D01D01002CE42D /* NanoChallenge6 */,
 				5A3CB88626D028D7007E560A /* NanoChallenge6Clip */,
+				5A37F21326D5772200BC8236 /* NanoChallenge6Widget */,
+				5A37F20E26D5772200BC8236 /* Frameworks */,
 				B65ADF9E26D01D01002CE42D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +179,7 @@
 			children = (
 				B65ADF9D26D01D01002CE42D /* NanoChallenge6.app */,
 				5A3CB88526D028D7007E560A /* NanoChallenge6Clip.app */,
+				5A37F20D26D5772200BC8236 /* NanoChallenge6WidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,6 +207,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A37F20C26D5772200BC8236 /* NanoChallenge6WidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A37F22226D5772400BC8236 /* Build configuration list for PBXNativeTarget "NanoChallenge6WidgetExtension" */;
+			buildPhases = (
+				5A37F20926D5772200BC8236 /* Sources */,
+				5A37F20A26D5772200BC8236 /* Frameworks */,
+				5A37F20B26D5772200BC8236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NanoChallenge6WidgetExtension;
+			productName = NanoChallenge6WidgetExtension;
+			productReference = 5A37F20D26D5772200BC8236 /* NanoChallenge6WidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5A3CB88426D028D7007E560A /* NanoChallenge6Clip */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A3CB89526D028D7007E560A /* Build configuration list for PBXNativeTarget "NanoChallenge6Clip" */;
@@ -168,11 +249,13 @@
 				B65ADF9A26D01D01002CE42D /* Frameworks */,
 				B65ADF9B26D01D01002CE42D /* Resources */,
 				5A3CB89826D028D7007E560A /* Embed App Clips */,
+				5A37F21F26D5772400BC8236 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				5A3CB89326D028D7007E560A /* PBXTargetDependency */,
+				5A37F21D26D5772400BC8236 /* PBXTargetDependency */,
 			);
 			name = NanoChallenge6;
 			productName = NanoChallenge6;
@@ -188,6 +271,9 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					5A37F20C26D5772200BC8236 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
 					5A3CB88426D028D7007E560A = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
@@ -211,11 +297,20 @@
 			targets = (
 				B65ADF9C26D01D01002CE42D /* NanoChallenge6 */,
 				5A3CB88426D028D7007E560A /* NanoChallenge6Clip */,
+				5A37F20C26D5772200BC8236 /* NanoChallenge6WidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A37F20B26D5772200BC8236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A37F21826D5772400BC8236 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3CB88326D028D7007E560A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,6 +334,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A37F20926D5772200BC8236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A37F21526D5772200BC8236 /* NanoChallenge6Widget.swift in Sources */,
+				5A37F21A26D5772400BC8236 /* NanoChallenge6Widget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A3CB88126D028D7007E560A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -253,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A37F21B26D5772400BC8236 /* NanoChallenge6Widget.intentdefinition in Sources */,
 				B65ADFA326D01D01002CE42D /* ContentView.swift in Sources */,
 				B65ADFA126D01D01002CE42D /* NanoChallenge6App.swift in Sources */,
 			);
@@ -261,6 +366,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5A37F21D26D5772400BC8236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A37F20C26D5772200BC8236 /* NanoChallenge6WidgetExtension */;
+			targetProxy = 5A37F21C26D5772400BC8236 /* PBXContainerItemProxy */;
+		};
 		5A3CB89326D028D7007E560A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5A3CB88426D028D7007E560A /* NanoChallenge6Clip */;
@@ -269,6 +379,50 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		5A37F22026D5772400BC8236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWA99NR7DU;
+				INFOPLIST_FILE = NanoChallenge6Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AcademySenac.NanoChallenge6.NanoChallenge6Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A37F22126D5772400BC8236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VWA99NR7DU;
+				INFOPLIST_FILE = NanoChallenge6Widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AcademySenac.NanoChallenge6.NanoChallenge6Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5A3CB89626D028D7007E560A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -480,6 +634,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A37F22226D5772400BC8236 /* Build configuration list for PBXNativeTarget "NanoChallenge6WidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A37F22026D5772400BC8236 /* Debug */,
+				5A37F22126D5772400BC8236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5A3CB89526D028D7007E560A /* Build configuration list for PBXNativeTarget "NanoChallenge6Clip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
