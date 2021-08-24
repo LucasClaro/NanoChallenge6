@@ -27,7 +27,7 @@
 		<key>NSAppClipRequestEphemeralUserNotification</key>
 		<false/>
 		<key>NSAppClipRequestLocationConfirmation</key>
-		<false/>
+		<true/>
 	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -45,8 +45,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
@@ -54,6 +52,10 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>NewYork.ttf</string>
 	</array>
 </dict>
 </plist>
