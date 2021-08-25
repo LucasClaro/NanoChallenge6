@@ -222,7 +222,8 @@ struct ItemAberto: View {
                     
                     Image("Prod"+(itemAberto?.id ?? "0"))
                         .resizable()
-                        .frame(minWidth: 150, idealWidth: 150, maxWidth: 200, minHeight: 200, idealHeight: 200, maxHeight: 200, alignment: .center)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 200, idealHeight: 200, maxHeight: 200, alignment: .center)
                 }
                 
                 Spacer()
