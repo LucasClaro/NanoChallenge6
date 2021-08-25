@@ -40,6 +40,7 @@ struct ContentViewClip: View {
                 
             }
         }
+            .preferredColorScheme(.light)
     }
     
     func respondToInvocation(_ activity: NSUserActivity) {

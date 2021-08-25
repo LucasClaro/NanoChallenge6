@@ -147,6 +147,7 @@ struct NanoChallenge6WidgetEntryView: View {
             
 
         }
+            .preferredColorScheme(.light)
     }
 }
 

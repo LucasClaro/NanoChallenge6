@@ -99,6 +99,7 @@ struct ContentView: View {
             .padding(.top, 50.0)//VStack
                 .resignKeyboardOnDragGesture()
         }
+            .preferredColorScheme(.light)
         
     }
     
