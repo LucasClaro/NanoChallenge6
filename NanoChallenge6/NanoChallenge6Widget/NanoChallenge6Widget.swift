@@ -40,6 +40,25 @@ struct SimpleEntry: TimelineEntry {
     let configuration: ConfigurationIntent
 }
 
+struct FavoriteProd: View {
+    @State var prodNumber: Int = 1
+    
+    var body: some View {
+        ZStack {
+            Image("Quadro2")
+                .resizable()
+                .frame(width: 150, height: 135)
+            
+            Link(destination: URL(string: "\(prodNumber-1)")!, label: {
+                Image("Prod\(prodNumber)")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 115, height: 115)
+            })
+        }
+    }
+}
+
 struct NanoChallenge6WidgetEntryView: View {
     var entry: Provider.Entry
     
@@ -47,7 +66,6 @@ struct NanoChallenge6WidgetEntryView: View {
     
     @ViewBuilder
     var body: some View {
-        
         ZStack {
             Image("Fundo2")
                 .resizable()
@@ -57,99 +75,24 @@ struct NanoChallenge6WidgetEntryView: View {
             switch family {
             case .systemMedium:
                 HStack {
-                    ZStack {
-                        Image("Quadro2")
-                            .resizable()
-                            .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
-                        Link(destination: URL(string: "Fundo1")!, label: {
-                            Image("Prod1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        })
-                    }
-                    
-                    ZStack {
-                        Image("Quadro2")
-                            .resizable()
-                            .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        
-                        Link(destination: URL(string: "Fundo2")!, label: {
-                            Image("Prod2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        })
-                    }
+                    FavoriteProd(prodNumber: 1)
+                    FavoriteProd(prodNumber: 2)
                 }
                 
             case .systemLarge:
                 VStack {
                     HStack {
-                        ZStack {
-                            Image("Quadro2")
-                                .resizable()
-                                .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            
-                            Image("Prod1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        }
-                        
-                        ZStack {
-                            Image("Quadro2")
-                                .resizable()
-                                .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            
-                            Image("Prod2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        }
-                        
+                        FavoriteProd(prodNumber: 3)
+                        FavoriteProd(prodNumber: 4)
                     }
                     HStack {
-                        ZStack {
-                            Image("Quadro2")
-                                .resizable()
-                                .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            
-                            Image("Prod3")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        }
-                        
-                        ZStack {
-                            Image("Quadro2")
-                                .resizable()
-                                .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            
-                            Image("Prod4")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        }
-                        
+                        FavoriteProd(prodNumber: 5)
+                        FavoriteProd(prodNumber: 6)
                     }
                 }
             default:
-                Image("Quadro2")
-                    .resizable()
-                    .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
-                VStack {
-                    
-                    Image("Prod1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                }
+                FavoriteProd(prodNumber: 7)
             }
-            
-            
         }
         .preferredColorScheme(.light)
     }
