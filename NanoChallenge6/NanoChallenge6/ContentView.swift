@@ -13,13 +13,14 @@ struct ContentView: View {
     @State private var showCancelButton: Bool = false
     
     @State private var selectedCategory : String = ""
+    @State private var fundo = "Fundo1"
     
     //MARK: ContentView
     var body: some View {
         
         ZStack {
             
-            Image("Fundo1")
+            Image(fundo)
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -100,6 +101,10 @@ struct ContentView: View {
                 .resignKeyboardOnDragGesture()
         }
             .preferredColorScheme(.light)
+        .onOpenURL(perform: { url in
+                    print(url)
+                    fundo = url.absoluteString
+                })
         
     }
     
