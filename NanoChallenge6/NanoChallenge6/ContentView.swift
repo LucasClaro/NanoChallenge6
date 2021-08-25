@@ -237,10 +237,18 @@ struct ItemAberto: View {
                     
                     HStack {
                         Spacer()
-                        Button("Order") {
-                            aberto = false
-                            itemAberto = nil
+                        Button(action: {
+                           aberto = false
+                           itemAberto = nil
                         }
+                        ,label: {
+                            HStack {
+                                Text("Order")
+                                Image("carrinho")
+                                    .resizable()
+                                    .frame(width: 25, height: 25, alignment: .center)
+                            }
+                        })
                             .font(.custom("NewYork-Black", size: 16))
                             .padding()
                             .background(Color.init(red: 150/255, green: 50/255, blue: 50/255, opacity: 1))
