@@ -13,14 +13,13 @@ struct ContentView: View {
     @State private var showCancelButton: Bool = false
     
     @State private var selectedCategory : String = ""
-    @State private var fundo = "Fundo1"
     
     //MARK: ContentView
     var body: some View {
         
         ZStack {
             
-            Image(fundo)
+            Image("Fundo1")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
@@ -101,10 +100,7 @@ struct ContentView: View {
                 .resignKeyboardOnDragGesture()
         }
             .preferredColorScheme(.light)
-        .onOpenURL(perform: { url in
-                    print(url)
-                    fundo = url.absoluteString
-                })
+        
         
     }
     
@@ -192,6 +188,14 @@ struct ItensList: View {
                 }
             }
         }
+        .onOpenURL(perform: { url in
+            print(url)
+            let item: Int = Int(url.absoluteString) ?? 0
+            if item != 0 {
+                mostrandoItem.toggle()
+                produtoSelecionado = produtos[item]
+            }
+                })
     }
 }
 
