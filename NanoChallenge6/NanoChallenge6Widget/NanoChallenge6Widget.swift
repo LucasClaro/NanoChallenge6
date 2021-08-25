@@ -13,15 +13,15 @@ struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date(), configuration: ConfigurationIntent())
     }
-
+    
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date(), configuration: configuration)
         completion(entry)
     }
-
+    
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
-
+        
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
@@ -29,7 +29,7 @@ struct Provider: IntentTimelineProvider {
             let entry = SimpleEntry(date: entryDate, configuration: configuration)
             entries.append(entry)
         }
-
+        
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -47,7 +47,7 @@ struct NanoChallenge6WidgetEntryView: View {
     
     @ViewBuilder
     var body: some View {
-                
+        
         ZStack {
             Image("Fundo2")
                 .resizable()
@@ -62,10 +62,12 @@ struct NanoChallenge6WidgetEntryView: View {
                             .resizable()
                             .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         
-                        Image("Prod1")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        Link(destination: URL(string: "Fundo1")!, label: {
+                            Image("Prod1")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        })
                     }
                     
                     ZStack {
@@ -73,10 +75,12 @@ struct NanoChallenge6WidgetEntryView: View {
                             .resizable()
                             .frame(width: 150, height: 135, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         
-                        Image("Prod2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        Link(destination: URL(string: "Fundo2")!, label: {
+                            Image("Prod2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        })
                     }
                 }
                 
@@ -104,7 +108,7 @@ struct NanoChallenge6WidgetEntryView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }
-           
+                        
                     }
                     HStack {
                         ZStack {
@@ -128,7 +132,7 @@ struct NanoChallenge6WidgetEntryView: View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 115, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         }
-           
+                        
                     }
                 }
             default:
@@ -145,16 +149,16 @@ struct NanoChallenge6WidgetEntryView: View {
                 }
             }
             
-
+            
         }
-            .preferredColorScheme(.light)
+        .preferredColorScheme(.light)
     }
 }
 
 @main
 struct NanoChallenge6Widget: Widget {
     let kind: String = "NanoChallenge6Widget"
-
+    
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             NanoChallenge6WidgetEntryView(entry: entry)
