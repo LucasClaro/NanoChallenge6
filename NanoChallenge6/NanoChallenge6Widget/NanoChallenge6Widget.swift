@@ -158,6 +158,7 @@ struct NanoChallenge6Widget: Widget {
     var body: some WidgetConfiguration {
         IntentConfiguration(kind: kind, intent: ConfigurationIntent.self, provider: Provider()) { entry in
             NanoChallenge6WidgetEntryView(entry: entry)
+                .widgetURL(URL(string: "HPwidget://Prod1"))
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
