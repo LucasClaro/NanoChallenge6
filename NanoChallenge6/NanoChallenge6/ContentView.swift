@@ -190,8 +190,8 @@ struct ItensList: View {
         }
         .onOpenURL(perform: { url in
             print(url)
-            let item: Int = Int(url.absoluteString) ?? 0
-            if item != 0 {
+            let item: Int = Int(url.absoluteString) ?? -1
+            if item != -1 {
                 mostrandoItem.toggle()
                 produtoSelecionado = produtos[item]
             }
@@ -275,6 +275,7 @@ struct ItemAberto: View {
             }
                 .padding()
         }
+        .preferredColorScheme(.light)
 
     }
 }
