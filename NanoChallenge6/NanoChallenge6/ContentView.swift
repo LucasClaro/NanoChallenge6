@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct ContentView: View {
     
@@ -143,11 +144,16 @@ struct ItensList: View {
     
     let produtosTeste = ["ProdutoA","ProdutoB","ProdutoComNomeGradePraTestar","ProdutoD","ProdutoE","ProdutoF","ProdutoG", "ProdutoH"]
     
+    
     @State private var mostrandoItem : Bool = false
     @State private var produtoSelecionado : Produto? = nil
     
     @Binding var searchText : String
     @Binding var selectedCategory : String
+    
+    #if APPCLIP
+    @State private var presentingAppStoreOverlay = false
+    #endif
     
     let columns = [
         GridItem(.flexible(minimum: 40), spacing: 0),
@@ -180,22 +186,34 @@ struct ItensList: View {
                                 mostrandoItem.toggle()
                                 produtoSelecionado = produto
                             }
-                            .sheet(isPresented: $mostrandoItem) {
+                            .sheet(isPresented: $mostrandoItem, onDismiss: overlay) {
                                 ItemAberto(aberto: $mostrandoItem, itemAberto: $produtoSelecionado)
                             }
                     }
                 
                 }
             }
+            #if APPCLIP
+            Text("App Store Overlay")
+                .hidden()
+                .appStoreOverlay(isPresented: $presentingAppStoreOverlay) {
+                    SKOverlay.AppClipConfiguration(position: .bottom)
+                }
+            #endif
         }
         .onOpenURL(perform: { url in
-            print(url)
             let item: Int = Int(url.absoluteString) ?? -1
             if item != -1 {
                 mostrandoItem.toggle()
                 produtoSelecionado = produtos[item]
             }
                 })
+    }
+    
+    func overlay() {
+        #if APPCLIP
+            presentingAppStoreOverlay = true
+        #endif
     }
 }
 
@@ -248,8 +266,8 @@ struct ItemAberto: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                           aberto = false
-                           itemAberto = nil
+                            aberto = false
+                            itemAberto = nil
                         }
                         ,label: {
                             HStack {
