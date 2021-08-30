@@ -33,69 +33,67 @@ struct ContentView: View {
                 
                 SearchBar()
                     
-                    VStack {
-                        HStack (alignment: .center) {
-                            Spacer()
-                            Text("Candies")
-                                .padding()
-                                .font(.custom("NewYork-Black", size: 18))
-                                .if (selectedCategory == "Candies") { view in
-                                    view
-                                        .background(Color.init(red: 150/255, green: 50/255, blue: 50/255, opacity: 1))
-                                        .foregroundColor(Color.init(red: 200/255, green: 174/255, blue: 120/255, opacity: 1))
-                                        .clipShape(Capsule())
-                                }
-                                .onTapGesture {
-                                    if selectedCategory == "Candies"{
-                                        selectedCategory = ""
-                                    }
-                                    else {
-                                        selectedCategory = "Candies"
-                                    }
-                                }
-                            Spacer()
-                            Text("Plants")
-                                .padding()
-                                .font(.custom("NewYork-Black", size: 18))
-                                .if (selectedCategory == "Plants") { view in
-                                    view
-                                        .background(Color.init(red: 150/255, green: 50/255, blue: 50/255, opacity: 1))
-                                        .foregroundColor(Color.init(red: 200/255, green: 174/255, blue: 120/255, opacity: 1))
-                                        .clipShape(Capsule())
-                                }
-                                .onTapGesture {
-                                    if selectedCategory == "Plants"{
-                                        selectedCategory = ""
-                                    }
-                                    else {
-                                        selectedCategory = "Plants"
-                                    }
-                                }
-                            Spacer()
-                            Text("Jokes")
-                                .padding()
-                                .font(.custom("NewYork-Black", size: 18))
-                                .if (selectedCategory == "Jokes") { view in
-                                    view
-                                        .background(Color.init(red: 150/255, green: 50/255, blue: 50/255, opacity: 1))
-                                        .foregroundColor(Color.init(red: 200/255, green: 174/255, blue: 120/255, opacity: 1))
-                                        .clipShape(Capsule())
-                                }
-                                .onTapGesture {
-                                    if selectedCategory == "Jokes"{
-                                        selectedCategory = ""
-                                    }
-                                    else {
-                                        selectedCategory = "Jokes"
-                                    }
-                                }
-                            Spacer()
+                HStack (alignment: .center) {
+                    Spacer()
+                    Text("Candies")
+                        .padding()
+                        .font(.custom("NewYork-Black", size: 18))
+                        .if (selectedCategory == "Candies") { view in
+                            view
+                                .background(Color.init(red: 150/255, green: 50/255, blue: 50/255, opacity: 1))
+                                .foregroundColor(Color.init(red: 200/255, green: 174/255, blue: 120/255, opacity: 1))
+                                .clipShape(Capsule())
                         }
-                            .padding()
+                        .onTapGesture {
+                            if selectedCategory == "Candies"{
+                                selectedCategory = ""
+                            }
+                            else {
+                                selectedCategory = "Candies"
+                            }
+                        }
+                    Spacer()
+                    Text("Plants")
+                        .padding()
+                        .font(.custom("NewYork-Black", size: 18))
+                        .if (selectedCategory == "Plants") { view in
+                            view
+                                .background(Color.init(red: 150/255, green: 50/255, blue: 50/255, opacity: 1))
+                                .foregroundColor(Color.init(red: 200/255, green: 174/255, blue: 120/255, opacity: 1))
+                                .clipShape(Capsule())
+                        }
+                        .onTapGesture {
+                            if selectedCategory == "Plants"{
+                                selectedCategory = ""
+                            }
+                            else {
+                                selectedCategory = "Plants"
+                            }
+                        }
+                    Spacer()
+                    Text("Jokes")
+                        .padding()
+                        .font(.custom("NewYork-Black", size: 18))
+                        .if (selectedCategory == "Jokes") { view in
+                            view
+                                .background(Color.init(red: 150/255, green: 50/255, blue: 50/255, opacity: 1))
+                                .foregroundColor(Color.init(red: 200/255, green: 174/255, blue: 120/255, opacity: 1))
+                                .clipShape(Capsule())
+                        }
+                        .onTapGesture {
+                            if selectedCategory == "Jokes"{
+                                selectedCategory = ""
+                            }
+                            else {
+                                selectedCategory = "Jokes"
+                            }
+                        }
+                    Spacer()
+                }
+                    .padding()
                         
-                        ItensList(searchText: $searchText, selectedCategory: $selectedCategory)
-                        
-                    }//VStack
+                
+                ItensList(searchText: $searchText, selectedCategory: $selectedCategory)
             }
             .padding(.top, 50.0)//VStack
                 .resignKeyboardOnDragGesture()
@@ -105,6 +103,7 @@ struct ContentView: View {
         
     }
     
+    //MARK:SearchBar
     func SearchBar() -> some View {
         HStack {
             HStack {
@@ -242,7 +241,7 @@ struct ItemAberto: View {
                         .resizable()
                         .frame(minWidth: 261, idealWidth: 326, maxWidth: 326, minHeight: 200, idealHeight: 250, maxHeight: 250, alignment: .center)
                     
-                    Image("Prod"+(itemAberto?.id ?? "0"))
+                    Image("Prod"+(itemAberto?.id ?? "1"))
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(minWidth: 200, idealWidth: 200, maxWidth: 200, minHeight: 200, idealHeight: 200, maxHeight: 200, alignment: .center)
@@ -266,8 +265,7 @@ struct ItemAberto: View {
                     HStack {
                         Spacer()
                         Button(action: {
-                            aberto = false
-                            itemAberto = nil
+                           aberto = false
                         }
                         ,label: {
                             HStack {
@@ -342,7 +340,8 @@ extension View {
     ///   - condition: The condition to evaluate.
     ///   - transform: The transform to apply to the source `View`.
     /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
-    @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
+    @ViewBuilder
+    func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
         if condition {
             transform(self)
         } else {
