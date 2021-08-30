@@ -83,8 +83,8 @@ struct ContentViewClip: View {
     }
     
     private func location(from url: URL) -> CLRegion? {
-        let coordinates = CLLocationCoordinate2D(latitude: -23.6694, longitude: -46.7006)
-        return CLCircularRegion(center: coordinates, radius: 500, identifier: "Senac")
+        let coordinates = CLLocationCoordinate2D(latitude: 28.47277, longitude: -81.47262)
+        return CLCircularRegion(center: coordinates, radius: 500, identifier: "Hogsmeade")
     }
 }
 
